@@ -1,102 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    public static GameManager access;
-    public Sprite whiteBlock;
-    Vector3 input = Vector2.zero;
+    public static GameObject networkManager;
+    public Transform backgroundRoot;
 
-    //public NetworkIdentity client;
+    Text countdown;
 
+    IEnumerator Start () {
+		yield return 0; //0 will wait 1 frame.
+        networkManager = GameObject.Find("_NetworkManager");
 
-    public PlayerMovement currentPlayer;
-    GameObject playerSymbol;
-
-    public GameObject ship;
-
-    //public PlayerMovement[] players;
-
-    IEnumerator Start() {
-        access = this;
+        //if we loaded a scene at startup that isn't lobby -- switch to lobby scene.
+        if (networkManager == null) { SceneManager.LoadScene("Lobby", LoadSceneMode.Single); yield break; }
         
-        yield return 2;
-        ship = GameObject.Find("Ship");
-        yield return 4;
+        CreateBackground();
+	}
 
-        //SwitchPlayer(3);
-
-    }
-
-    public void SelectPlayer(PlayerMovement player) {
-        //currentPlayer = player;
-        //player.currentShip = ship;
-        //player.ExitShipView();
-        //player.transform.SetParent(ship.transform.FindChild("Inside").transform);
-        //player.transform.localPosition = Vector2.zero;
-        //CameraManager.access.player = player;
-    }
-
-    public void SwitchPlayer(int num) {
-        //if (currentPlayer != null) {
-        //    currentPlayer.playerActive = false;
-        //}
+    public void CreateBackground() {
         
+        int x = 0;
+        int y = 0;
 
-        ////currentPlayer = players[num];
+        int gridX = 5;
+        int gridY = 5;
 
-        //if (playerSymbol == null) {
-        //    playerSymbol = currentPlayer.transform.Find("p1").gameObject;
-        //}
+        float bgSizeX = 1920 / 100;
+        float bgSizeY = 1200 / 100;
 
-        //CameraManager.access.UpdatePlayer(currentPlayer);
+        float xStart = -((gridX - 1) * bgSizeX) * 0.5f;
+        float yStart = -((gridY - 1) * bgSizeY) * 0.5f;
 
-        //playerSymbol.transform.SetParent(currentPlayer.transform);
-        //playerSymbol.transform.localPosition = new Vector3(0.1f, 0.42f, 0);
-        //currentPlayer.playerActive = true;
-    }
+        //create background from resource folder
+        GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/Space_Background") as GameObject, 
+            new Vector3(xStart + x * bgSizeX, yStart + y * bgSizeY, 0),
+            Quaternion.identity,
+            backgroundRoot);
 
-    // Update is called once per frame
-    void Update () {
-        if (currentPlayer == null) { return; }
+        x = 1; //we just placed the first one.
 
-        //if (Input.GetKeyDown(KeyCode.Alpha1)) {
-        //    SwitchPlayer(3);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha2)) {
-        //    SwitchPlayer(0);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha3)) {
-        //    SwitchPlayer(1);
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha4)) {
-        //    SwitchPlayer(2);
-        //}
-
-        input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-
-        if (Input.GetKeyDown(KeyCode.F)) {
-            //USE EVENT
-            currentPlayer.UseAction();
+        //duplicate background
+        while (y < gridY) {
+            GameObject bgClone = (GameObject)Instantiate(
+                go, 
+                new Vector3(xStart + x * bgSizeX, yStart + y * bgSizeY, 0),
+                Quaternion.identity,
+                backgroundRoot);
+            x++;
+            if (x >= gridX) { y++; x = 0; }
         }
-
-        currentPlayer.Movement(input);
     }
-}
 
-
-public static class Vector2Extension {
-
-    public static Vector2 Rotate(this Vector2 v, float degrees) {
-        float sin = Mathf.Sin(degrees * Mathf.Deg2Rad);
-        float cos = Mathf.Cos(degrees * Mathf.Deg2Rad);
-
-        float tx = v.x;
-        float ty = v.y;
-        v.x = (cos * tx) - (sin * ty);
-        v.y = (sin * tx) + (cos * ty);
-        return v;
-    }
 }
