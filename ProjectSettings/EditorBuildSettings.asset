@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 34f26aea82c331c41adfa55ade5a67cc
+  - enabled: 1
+    path: Assets/Scenes/Clonze.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/clonze.unity
     guid: 00000000000000000000000000000000

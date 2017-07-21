@@ -1,4 +1,4 @@
-Initialize engine version: 5.6.0f3 (497a0f351392)
+Initialize engine version: 5.6.2f1 (a2913c821e27)
 GfxDevice: creating device client; threaded=1
 d3d11: D3D_FEATURE_LEVEL_11_1 not-recognized (only 11.0 runtime installed?)
 Direct3D:
@@ -8,24 +8,24 @@ Direct3D:
     VRAM:     4008 MB
     Driver:   22.21.13.8253
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.034 seconds
-Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceStuff\test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.026 seconds
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1680x1050 60Hz; virtual: 5520x1080 at -1680,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.448142 ms
+UnloadTime: 1.284613 ms
 @ Start
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -50,6 +50,25 @@ Successfully listed matches. 1st match: UnityEngine.Networking.Match.MatchInfoSn
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+temporary disabled join match!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ CreatedMatch
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Failed to join match: Failed; CCU exceeded for appId=3847001FormatException:[System.FormatException: FAILURE Returned from server: Failed; CCU exceeded for appId=3847001
+  at UnityEngine.Networking.Match.Response.Parse (System.Object obj) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.Match.CreateMatchResponse.Parse (System.Object obj) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Networking.Match.NetworkMatch+<ProcessMatchResponse>c__Iterator0`2[UnityEngine.Networking.Match.CreateMatchResponse,UnityEngine.Networking.Match.NetworkMatch+DataResponseDelegate`1[UnityEngine.Networking.Match.MatchInfo]].MoveNext () [0x00000] in <filename unknown>:0 ] 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 MatchMakingClient Join :https://mm.unet.unity3d.com/json/reply/JoinMatchRequest
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -58,7 +77,7 @@ MatchMakingClient Join :https://mm.unet.unity3d.com/json/reply/JoinMatchRequest
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Successfully joined match: 4503599644173788
+Successfully joined match: 4503599644195168
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -86,11 +105,36 @@ CRC Remote Dump BallScript : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Scene 'Clonze' couldn't be loaded because it has not been added to the build settings or the AssetBundle has not been loaded.
-To add a scene to the build settings use the menu File->Build Settings...
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.294773 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 364.
+Total: 0.356195 ms (FindLiveObjects: 0.024936 ms CreateObjectMapping: 0.022836 ms MarkObjects: 0.299498 ms  DeleteObjects: 0.008137 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ShipPilotScript.Start () [0x00000] in <filename unknown>:0 
  
-(Filename:  Line: 137)
+(Filename:  Line: -1)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:52.86.130.215:9999} time {60744}, last rec time {58407} rtt {159} timeout {2000}
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ClientDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+UnloadTime: 2.075225 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 334.
+Total: 0.351208 ms (FindLiveObjects: 0.014174 ms CreateObjectMapping: 0.024411 ms MarkObjects: 0.298448 ms  DeleteObjects: 0.013124 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 281c -> priority: 1 
-  Thread -> id: 28ec -> priority: 1 
+  Thread -> id: 2640 -> priority: 1 
+  Thread -> id: 13a8 -> priority: 1 

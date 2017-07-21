@@ -46,7 +46,9 @@ public class MyLobby : NetworkLobbyManager {
 
     void MMJoinMatch(MatchInfoSnapshot firstMatch) {
         print("@ JoinMatch");
-        matchMaker.JoinMatch(firstMatch.networkId, "", "", "", 0, 0, OnMatchJoined);
+        //matchMaker.JoinMatch(firstMatch.networkId, "", "", "", 0, 0, OnMatchJoined);
+        print("temporary disabled join match!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        matchMaker.CreateMatch("MM", 15, true, "", "", "", 0, 0, OnMatchCreate);
     }
 
     public override void OnMatchJoined(bool success, string extendedInfo, MatchInfo matchInfo) {
