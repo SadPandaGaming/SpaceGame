@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class ServerScript : NetworkBehaviour {
-
+    //
     Text countdown;
 
     void Start() {
