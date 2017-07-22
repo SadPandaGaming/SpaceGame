@@ -5,15 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lobby.unity
     guid: 34f26aea82c331c41adfa55ade5a67cc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Clonze.unity
-    guid: 00000000000000000000000000000000
+    guid: 731a5f950801749408a5c1e5cc42d873
   - enabled: 0
     path: Assets/clonze.unity
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Main.unity
+    path: Assets/Scenes/main.unity
     guid: ab095b0f8cf3a0746b23c999c44ef352
+  - enabled: 1
+    path: Assets/Scenes/Brad.unity
+    guid: a978fa5b596fdf349a15185f87f8a263
