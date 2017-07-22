@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour {
     Text countdown;
 
     IEnumerator Start () {
+        Application.targetFrameRate = 60;
 		yield return 0; //0 will wait 1 frame.
         networkManager = GameObject.Find("_NetworkManager");
 

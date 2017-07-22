@@ -5,13 +5,19 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour {
-    public static GameObject emptyPlayerGameObject;
-    float speed = 5f;
-    public GameObject ballPrefab;
+
+    float speed = 3.5f;
     public LayerMask wallsLayer;
 
     public Action useAction = null;
     public bool control = true;
+
+    //random test
+    bool random = false;
+    int[] randMove = { 1, -1 };
+    int randomX = 0;
+    int randomY = 0;
+    float time = 0.2f;
 
 
     IEnumerator Start() {
@@ -43,21 +49,39 @@ public class PlayerController : NetworkBehaviour {
 
         if (!hasAuthority) { return; }
 
-        if (!control) { return; } //if ocntrol is given to another script
+        if (!control) { return; } //if control is given to another script
 
         if (useAction != null && Input.GetKeyDown(KeyCode.F)) {
             useAction();
             print("f was pressed");
         }
 
+        //random activate
+        if (Input.GetKeyDown(KeyCode.T)) {
+            random = !random;
+        }
+
 
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+        //random test
+        if (random) {
+            time += Time.deltaTime;
+            if (time > 3) {
+                time = 0;
+                randomX = UnityEngine.Random.Range(0, 2);
+                randomY = UnityEngine.Random.Range(0, 2);
+            }
+            input.x = randMove[randomX];
+            input.y = randMove[randomY];
+        }
         Vector2 pos = transform.position;
-
+        
         if (CollisionX(input.x)) { input.x = 0; }
-        if (CollisionY(input.y)) { input.y = 0;}
+        if (CollisionY(input.y)) { input.y = 0; }
+        if (input.x != 0 && input.y != 0) { input = input.normalized; }
 
-        transform.position = pos + new Vector2(input.x, input.y) * speed * Time.deltaTime;
+        transform.position = pos + input * speed * Time.deltaTime;
 
     }
 

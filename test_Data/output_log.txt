@@ -18,69 +18,14 @@ Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\Sp
 Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.026 seconds
+- Completed reload, in  0.030 seconds
 Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\test_Data\Managed\System.dll (this message is harmless)
-desktop: 1680x1050 60Hz; virtual: 5520x1080 at -1680,0
 <RI> Initializing input.
 <RI> Input initialized.
+desktop: 1680x1050 60Hz; virtual: 5520x1080 at -1680,0
 <RI> Initialized touch support.
-UnloadTime: 1.284613 ms
-@ Start
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-@ ListMatches
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-@ OnMatchList
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Successfully listed matches. 1st match: UnityEngine.Networking.Match.MatchInfoSnapshot
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-@ JoinMatch
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-temporary disabled join match!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequest
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-@ CreatedMatch
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to join match: Failed; CCU exceeded for appId=3847001FormatException:[System.FormatException: FAILURE Returned from server: Failed; CCU exceeded for appId=3847001
-  at UnityEngine.Networking.Match.Response.Parse (System.Object obj) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.Match.CreateMatchResponse.Parse (System.Object obj) [0x00000] in <filename unknown>:0 
-  at UnityEngine.Networking.Match.NetworkMatch+<ProcessMatchResponse>c__Iterator0`2[UnityEngine.Networking.Match.CreateMatchResponse,UnityEngine.Networking.Match.NetworkMatch+DataResponseDelegate`1[UnityEngine.Networking.Match.MatchInfo]].MoveNext () [0x00000] in <filename unknown>:0 ] 
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-MatchMakingClient Join :https://mm.unet.unity3d.com/json/reply/JoinMatchRequest
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-@ JoinedMatch
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Successfully joined match: 4503599644195168
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
+UnloadTime: 1.279901 ms
 Network configuration mismatch detected. The number of networked scripts on the client does not match the number of networked scripts on the server. This could be caused by lazy loading of scripts on the client. This warning can be disabled by the checkbox in NetworkManager Script CRC Check.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -93,11 +38,7 @@ CRC Local Dump PlayerController : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-CRC Remote Dump ServerScript : 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CRC Remote Dump PlayerController : 0
+CRC Local Dump NetworkMovement : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -105,36 +46,35 @@ CRC Remote Dump BallScript : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.294773 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 364.
-Total: 0.356195 ms (FindLiveObjects: 0.024936 ms CreateObjectMapping: 0.022836 ms MarkObjects: 0.299498 ms  DeleteObjects: 0.008137 ms)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at ShipPilotScript.Start () [0x00000] in <filename unknown>:0 
+CRC Remote Dump PlayerController : 0
  
-(Filename:  Line: -1)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Log: connection {1} has been disconnected by timeout; address {::ffff:52.86.130.215:9999} time {60744}, last rec time {58407} rtt {159} timeout {2000}
-MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+CRC Remote Dump NetworkMovement : 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CRC Remote Dump ServerScript : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+UnloadTime: 0.493481 ms
 
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 361.
+Total: 0.544929 ms (FindLiveObjects: 0.027823 ms CreateObjectMapping: 0.029136 ms MarkObjects: 0.481669 ms  DeleteObjects: 0.005512 ms)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777} time {384163}, last rec time {382160} rtt {1} timeout {2000}
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
 ClientDisconnected due to error: Timeout
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-UnloadTime: 2.075225 ms
+UnloadTime: 1.933502 ms
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 334.
-Total: 0.351208 ms (FindLiveObjects: 0.014174 ms CreateObjectMapping: 0.024411 ms MarkObjects: 0.298448 ms  DeleteObjects: 0.013124 ms)
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 333.
+Total: 0.529705 ms (FindLiveObjects: 0.014961 ms CreateObjectMapping: 0.027036 ms MarkObjects: 0.354099 ms  DeleteObjects: 0.133082 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2640 -> priority: 1 
-  Thread -> id: 13a8 -> priority: 1 
+  Thread -> id: 1eb0 -> priority: 1 
+  Thread -> id: 4c0 -> priority: 1 

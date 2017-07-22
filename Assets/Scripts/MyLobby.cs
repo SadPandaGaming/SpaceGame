@@ -7,10 +7,13 @@ using UnityEngine.Networking.Match;
 public class MyLobby : NetworkLobbyManager {
 
 	IEnumerator Start () {
-		yield return 0; //0 will wait 1 frame.
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
+        Application.runInBackground = true;
+        yield return 0; //0 will wait 1 frame.
 
-        MMStart();
-        MMListMatches();
+        //MMStart();
+        //MMListMatches();
 	}
 	
 	void MMStart() {
@@ -46,9 +49,9 @@ public class MyLobby : NetworkLobbyManager {
 
     void MMJoinMatch(MatchInfoSnapshot firstMatch) {
         print("@ JoinMatch");
-        //matchMaker.JoinMatch(firstMatch.networkId, "", "", "", 0, 0, OnMatchJoined);
-        print("temporary disabled join match!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        matchMaker.CreateMatch("MM", 15, true, "", "", "", 0, 0, OnMatchCreate);
+        matchMaker.JoinMatch(firstMatch.networkId, "", "", "", 0, 0, OnMatchJoined);
+        //print("temporary disabled join match!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        //matchMaker.CreateMatch("MM", 15, true, "", "", "", 0, 0, OnMatchCreate);
     }
 
     public override void OnMatchJoined(bool success, string extendedInfo, MatchInfo matchInfo) {

@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 114666096676520650}
   - component: {fileID: 114309443655944676}
   - component: {fileID: 212050288992223962}
-  - component: {fileID: 114556212965201500}
   - component: {fileID: 58424882753757540}
   - component: {fileID: 50213536440891216}
+  - component: {fileID: 114749390831096530}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -95,27 +95,7 @@ MonoBehaviour:
   wallsLayer:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &114556212965201500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1841116657118776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 20
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 0.0001
+  control: 1
 --- !u!114 &114666096676520650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,6 +128,28 @@ MonoBehaviour:
     i15: 61
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114749390831096530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841116657118776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac333c9aeef1ce4ea878acf2d353269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 4544161621503442}
+  localpos: 1
+  SendRate: 1
+  movementThreshold: 0.0052
+  angleThreshold: 5
+  distanceBeforeSnap: 0.3
+  angleBeforeSnap: 40
+  movementInterpolation: 0.1
+  rotationInterpolation: 0.1
+  thresholdMovementPrediction: 0.7
+  thresholdRotationPrediction: 0.5
 --- !u!212 &212050288992223962
 SpriteRenderer:
   m_ObjectHideFlags: 1
