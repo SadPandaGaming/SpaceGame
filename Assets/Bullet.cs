@@ -7,15 +7,35 @@ public class Bullet : NetworkBehaviour {
     bool fire = false;
     float speed = 20f;
     public float lifeTime = 10f;
+    GameObject owner;
+
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+
+        if (collision.gameObject.tag == "Ship") {
+            print("hit");
+            if (owner == GameManager.clientGameObject) {
+                print("???!!!");
+
+                if (GameManager.clientController.shipScript.gameObject != collision.gameObject) {
+
+                    GameManager.clientController.CmdDamage(collision.gameObject, gameObject);
+                    print("DMG!!!");
+                }
+            }
+            
+        }
+    }
 
     [ClientRpc]
-	public void RpcShoot() {
+	public void RpcShoot(GameObject _owner) {
+        owner = _owner;
         //direction = dir;
         fire = true;
     }
 
-    public void Shoot() {
-
+    public void Shoot(GameObject _owner) {
+        owner = _owner;
         //direction = dir;
         fire = true;
     }

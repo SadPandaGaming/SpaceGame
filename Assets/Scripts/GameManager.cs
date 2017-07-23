@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
     public static GameObject clientGameObject;
     public static PlayerController clientController;
 
+    public GameObject WorldCanvasObject;
+
     Text countdown;
 
     IEnumerator Start () {

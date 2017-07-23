@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class PlayerController : NetworkBehaviour {
@@ -13,8 +14,38 @@ public class PlayerController : NetworkBehaviour {
 
     public bool control = true;
 
-    public ShipPilotScript shipScript;
+    public ShipPilotScript pilotScript;
     public ShipWeaponScript weaponScript;
+    public Ship shipScript;
+
+
+    [SyncVar]
+    public float health = 30;
+    [SyncVar]
+    public float maxHealth = 30;
+
+    public Transform healthParent;
+    public Image healthSlider;
+
+    [TargetRpc]
+    public void TargetDamaged(NetworkConnection target) {
+
+        
+        healthSlider.fillAmount = health / maxHealth;
+
+        if (health <= 0) {
+            //dead
+            print("DEAAAAAAAAAAAAAAAD");
+        }
+
+    }
+
+
+    public void ShowHealth() {
+        healthParent = GameManager.access.WorldCanvasObject.transform.Find("health");
+        healthSlider = healthParent.Find("HealthSlider").GetComponent<Image>();
+        healthParent.gameObject.SetActive(true);
+    }
 
 
     //random test
@@ -25,14 +56,27 @@ public class PlayerController : NetworkBehaviour {
     float time = 0.2f;
 
     public void EnterShip(GameObject insideShip) {
+
         transform.SetParent(insideShip.transform);
+        pilotScript = insideShip.transform.Find("Spot_Driver").GetComponentInChildren<ShipPilotScript>();
+        weaponScript = insideShip.transform.Find("Spot_Weapon").GetComponentInChildren<ShipWeaponScript>();
+        shipScript = insideShip.transform.parent.gameObject.GetComponent<Ship>();
+        shipScript.pc = this;
         if (hasAuthority) {
             transform.localPosition = Vector3.zero;
-            shipScript = insideShip.transform.Find("Spot_Driver").GetComponentInChildren<ShipPilotScript>();
-            weaponScript = insideShip.transform.Find("Spot_Weapon").GetComponentInChildren<ShipWeaponScript>();
+            
             CameraFollow.access.AssignShip(insideShip.transform.parent.Find("CameraPosition").gameObject);
+            ShowHealth();
+            
         }
 
+    }
+
+    [Command]
+    public void CmdDamage(GameObject ship, GameObject bullet) {
+        ship.GetComponent<Ship>().pc.health -= 1;
+        ship.GetComponent<Ship>().pc.TargetDamaged(ship.GetComponent<Ship>().pc.GetComponent<NetworkIdentity>().clientAuthorityOwner);
+        NetworkServer.Destroy(bullet);
     }
 
     IEnumerator Start() {
@@ -67,6 +111,11 @@ public class PlayerController : NetworkBehaviour {
         ship.transform.position = position;
     }
 
+    [Command]
+    public void CmdDestroyObject(GameObject target) {
+        Network.Destroy(target);
+    }
+
 
     //[TargetRpc]
     //public void TargetRecieved(NetworkConnection target) {
@@ -83,6 +132,9 @@ public class PlayerController : NetworkBehaviour {
 
         if (!hasAuthority) { return; }
 
+        if (healthParent != null) {
+            healthParent.transform.position = shipScript.transform.position + Vector3.down * 4.3f;
+        }
 
         if (!control) { return; } //if control is given to another script
 

@@ -94,7 +94,6 @@ public class ShipPilotScript : NetworkBehaviour {
         if (!(hasAuthority && authorityEnabled)) { return; }
 
 
-        print("test");
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         Vector2 pos = ship.transform.position;
         ship.transform.position = pos + (Vector2)ship.transform.up * input.y * speed * Time.deltaTime;

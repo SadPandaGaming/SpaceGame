@@ -67,12 +67,12 @@ public class ShipWeaponScript : NetworkBehaviour {
     float shotTimeWaited = 0.3f;
 
     [Command]
-    void CmdShoot(/*float angle, Vector2 dir*/) {
+    void CmdShoot(GameObject owner/*float angle, Vector2 dir*/) {
         GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/NetworkPrefabs/Bullet") as GameObject, turretPivot.transform.Find("BulletSpawner").position, turretPivot.transform.rotation);
         NetworkServer.Spawn(go);
         Bullet bullet = go.GetComponent<Bullet>();
-        bullet.RpcShoot();
-        bullet.Shoot();
+        bullet.RpcShoot(owner);
+        bullet.Shoot(owner);
     }
 
     
@@ -99,7 +99,7 @@ public class ShipWeaponScript : NetworkBehaviour {
 
             if (shotTimer > shotTimeWaited) {
                 shotTimer = 0;
-                CmdShoot(/*angle, targetDir*/);
+                CmdShoot(GameManager.clientGameObject/*angle, targetDir*/);
             }
         }
 
