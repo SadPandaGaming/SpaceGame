@@ -26,45 +26,59 @@ public class ServerScript : NetworkBehaviour {
         yield return new WaitForSecondsRealtime(1);
         RpcTimer("");
 
+        Vector3 pos = new Vector3(10, 0, 0);
+        foreach (var player in GameObject.FindGameObjectsWithTag("Player")) {
 
-        //spawn ship
-        GameObject go = (GameObject)Instantiate(Resources.Load("Prefabs/NetworkPrefabs/Ship") as GameObject, new Vector3(0, 0, 0), Quaternion.identity);
 
-        GameObject driver = (GameObject)Instantiate(Resources.Load("Prefabs/NetworkPrefabs/ShipConsoleDriver") as GameObject, new Vector3(0, 0, 0), Quaternion.identity);
+            //spawn ship
+            GameObject ship = (GameObject)Instantiate(Resources.Load("Prefabs/NetworkPrefabs/Ship") as GameObject, pos, Quaternion.identity);
 
-        
+            GameObject driver = (GameObject)Instantiate(Resources.Load("Prefabs/NetworkPrefabs/ShipConsoleDriver") as GameObject, new Vector3(0, 0, 0), Quaternion.identity);
 
-        NetworkServer.Spawn(driver);
+            GameObject turret = (GameObject)Instantiate(Resources.Load("Prefabs/NetworkPrefabs/ShipConsoleTurret") as GameObject, new Vector3(0, 0, 0), Quaternion.identity);
 
-        NetworkServer.Spawn(go);
+            NetworkServer.Spawn(turret);
 
-        //place users inside the ship
-        RpcMoveIntoShip(go, driver); //in the case where a server is not also a client, will i have to run the same code for the server too?
+            NetworkServer.Spawn(driver);
+
+            NetworkServer.Spawn(ship);
+
+
+            //place users inside the ship
+            RpcMoveIntoShip(ship, driver, turret, player); //in the case where a server is not also a client, will i have to run the same code for the server too?
+            MoveIntoShip(ship, driver, turret, player);
+
+            pos.x += 10f;
+        }
+
+       
     }
 
     [ClientRpc]
-    public void RpcMoveIntoShip(GameObject ship, GameObject driver) {
+    public void RpcMoveIntoShip(GameObject ship, GameObject driver, GameObject turret, GameObject player) {
+        MoveIntoShip(ship, driver, turret, player);
+    }
 
-        driver.transform.SetParent(ship.transform.Find("Inside").Find("Spot_Driver"));
-        driver.transform.localPosition = Vector2.zero;
-        
+    public void MoveIntoShip(GameObject ship, GameObject driver, GameObject turret, GameObject player) {
 
+        //BUILDING SHIP
         Transform insideShip = ship.transform.Find("Inside").transform;
-        foreach (var player in GameObject.FindGameObjectsWithTag("Player")) {
-            player.transform.SetParent(insideShip);
-        }
+
+        driver.transform.SetParent(insideShip.Find("Spot_Driver"));
+        driver.transform.localPosition = Vector2.zero;
+
+        turret.transform.SetParent(insideShip.Find("Spot_Weapon"));
+        turret.transform.localPosition = Vector2.zero;
 
         driver.GetComponent<ShipPilotScript>().InstantiatedOnNetwork();
 
+        ////Moving players into ship
+        //foreach (var player in GameObject.FindGameObjectsWithTag("Player")) {
 
-        //quick ntc test...
-        //GameObject[] gos = GameObject.FindGameObjectsWithTag("Player");
-        //NetworkTransformChild ntc = go.AddComponent<NetworkTransformChild>();
-        //ntc.target = gos[0].transform;
-        //ntc = go.AddComponent<NetworkTransformChild>();
-        //ntc.target = gos[1].transform;
-        //
-
+        //    player.GetComponent<PlayerController>().EnterShip(insideShip.gameObject);
+        //}
+        player.GetComponent<PlayerController>().EnterShip(insideShip.gameObject);
+        //CameraFollow.access.AssignShip(ship.transform.Find("CameraPosition").gameObject);
     }
 
     [ClientRpc]

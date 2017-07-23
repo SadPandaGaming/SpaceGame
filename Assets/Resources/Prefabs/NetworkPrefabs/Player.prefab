@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 212050288992223962}
   - component: {fileID: 58424882753757540}
   - component: {fileID: 50213536440891216}
-  - component: {fileID: 114749390831096530}
+  - component: {fileID: 114915700496115492}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -91,7 +91,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e269932b395f28e4b9cec42e49481473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 1136973108393162, guid: 98bd9f36b5f6b69439e80ba8e3463f1b, type: 2}
   wallsLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -128,7 +127,7 @@ MonoBehaviour:
     i15: 61
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114749390831096530
+--- !u!114 &114915700496115492
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -33,7 +33,9 @@ public class BallScript : NetworkBehaviour {
         authorityEnabled = false;
     }
 
-	void Update () {
+   
+
+    void Update () {
         if (!authorityEnabled) { return; }
         if (!hasAuthority) { return; }
 

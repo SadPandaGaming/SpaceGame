@@ -67,7 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NetworkPort: 7777
   m_ServerBindToIP: 0
-  m_ServerBindAddress: 
+  m_ServerBindAddress: 68.148.254.239
   m_NetworkAddress: localhost
   m_DontDestroyOnLoad: 1
   m_RunInBackground: 1
@@ -83,7 +83,9 @@ MonoBehaviour:
   - {fileID: 1136973108393162, guid: 98bd9f36b5f6b69439e80ba8e3463f1b, type: 2}
   - {fileID: 1171262405235848, guid: 6509296c9c7fc2e44a66bbfbb9be8d17, type: 2}
   - {fileID: 1934400793768418, guid: 204910129729047478a2157062cc2b7f, type: 2}
-  m_CustomConfig: 0
+  - {fileID: 1945989951477268, guid: ba668e89e31db9443bc49def2a16e484, type: 2}
+  - {fileID: 1057682909345212, guid: be784f69d46577f4caa5f2f3015ecc9c, type: 2}
+  m_CustomConfig: 1
   m_MaxConnections: 4
   m_ConnectionConfig:
     m_PacketSize: 1440
@@ -125,7 +127,7 @@ MonoBehaviour:
     m_MaxTimerTimeout: 12000
     m_MinNetSimulatorTimeout: 1
     m_MaxNetSimulatorTimeout: 12000
-  m_Channels: 
+  m_Channels: 0500000000000000
   m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1

@@ -25,8 +25,40 @@ Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\Sp
 <RI> Input initialized.
 desktop: 1680x1050 60Hz; virtual: 5520x1080 at -1680,0
 <RI> Initialized touch support.
-UnloadTime: 1.279901 ms
+UnloadTime: 1.674687 ms
+MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ OnMatchList
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Successfully listed matches. 1st match: UnityEngine.Networking.Match.MatchInfoSnapshot
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ JoinMatch
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient Join :https://mm.unet.unity3d.com/json/reply/JoinMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+@ JoinedMatch
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Successfully joined match: 4503599644349441
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 Network configuration mismatch detected. The number of networked scripts on the client does not match the number of networked scripts on the server. This could be caused by lazy loading of scripts on the client. This warning can be disabled by the checkbox in NetworkManager Script CRC Check.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CRC Local Dump Bullet : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -34,11 +66,23 @@ CRC Local Dump BallScript : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+CRC Local Dump NetworkMovement : 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 CRC Local Dump PlayerController : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-CRC Local Dump NetworkMovement : 0
+CRC Local Dump ShipWeaponScript : 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CRC Remote Dump ShipWeaponScript : 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CRC Remote Dump ServerScript : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -54,27 +98,20 @@ CRC Remote Dump NetworkMovement : 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-CRC Remote Dump ServerScript : 0
+CRC Remote Dump Bullet : 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.493481 ms
+UnloadTime: 0.231778 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 361.
-Total: 0.544929 ms (FindLiveObjects: 0.027823 ms CreateObjectMapping: 0.029136 ms MarkObjects: 0.481669 ms  DeleteObjects: 0.005512 ms)
-
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777} time {384163}, last rec time {382160} rtt {1} timeout {2000}
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-ClientDisconnected due to error: Timeout
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-UnloadTime: 1.933502 ms
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 333.
-Total: 0.529705 ms (FindLiveObjects: 0.014961 ms CreateObjectMapping: 0.027036 ms MarkObjects: 0.354099 ms  DeleteObjects: 0.133082 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 362.
+Total: 0.310000 ms (FindLiveObjects: 0.013386 ms CreateObjectMapping: 0.024674 ms MarkObjects: 0.266952 ms  DeleteObjects: 0.004462 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1eb0 -> priority: 1 
-  Thread -> id: 4c0 -> priority: 1 
+  Thread -> id: 28f8 -> priority: 1 
+  Thread -> id: 1784 -> priority: 1 

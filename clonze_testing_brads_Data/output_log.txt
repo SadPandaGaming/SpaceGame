@@ -1,0 +1,146 @@
+Initialize engine version: 5.6.2f1 (a2913c821e27)
+GfxDevice: creating device client; threaded=1
+d3d11: D3D_FEATURE_LEVEL_11_1 not-recognized (only 11.0 runtime installed?)
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   NVIDIA
+    VRAM:     4008 MB
+    Driver:   22.21.13.8253
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.035 seconds
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Travis\Documents\_Desktop\Projects\_unityProjects\SpaceGame\clonze_testing_brads_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1680x1050 60Hz; virtual: 5520x1080 at -1680,0
+<RI> Initialized touch support.
+UnloadTime: 1.384372 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.419721 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 375.
+Total: 0.596902 ms (FindLiveObjects: 0.042523 ms CreateObjectMapping: 0.040160 ms MarkObjects: 0.505031 ms  DeleteObjects: 0.008399 ms)
+
+try this if it doesnt work
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+start auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+end auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+f was pressed
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+start auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+called here!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+called here!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+end auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+called here!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+called here!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+start auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+end auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+start auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HandleTransform netId:7 is not for a valid player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+end auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+start auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HandleTransform netId:7 is not for a valid player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+end auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+start auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HandleTransform netId:7 is not for a valid player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+end auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+start auth
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HandleTransform netId:7 is not for a valid player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:50614} time {205253}, last rec time {203245} rtt {3} timeout {2000}
+Attempt to send to not connected connection {1}
+ 
+(Filename:  Line: 362)
+
+Failed to send internal buffer channel:1 bytesToSend:22
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Send Error: WrongConnection channel:1 bytesToSend:22
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+ServerDisconnected due to error: Timeout
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2460 -> priority: 1 
+  Thread -> id: 17a8 -> priority: 1 

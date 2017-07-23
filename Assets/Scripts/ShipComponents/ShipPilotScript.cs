@@ -9,7 +9,11 @@ using UnityEngine.Networking;
 public class ShipPilotScript : NetworkBehaviour {
 
     public GameObject ship;
+    public Rigidbody2D shipBody;
     float speed = 8f;
+    float rotationSpeed = 60f;
+
+    Vector2 input = Vector2.zero;
 
     [SyncVar][HideInInspector]
     public bool authorityEnabled = false;
@@ -22,6 +26,7 @@ public class ShipPilotScript : NetworkBehaviour {
     public void InstantiatedOnNetwork() {
         ship = gameObject.transform.parent.parent.parent.gameObject;
 
+        shipBody = ship.GetComponent<Rigidbody2D>();
         //the server starts with control
         if (isServer) {
             print("try this if it doesnt work");
@@ -38,21 +43,37 @@ public class ShipPilotScript : NetworkBehaviour {
         }
     }
 
-    public void UseConsole() {
-        if (!authorityEnabled) {
-            GameManager.clientController.CmdGainControl(gameObject);
-            GameManager.clientController.CmdGainControl(ship);
-            authorityEnabled = true;
-            GameManager.clientController.control = false;
+    private void OnTriggerExit2D(Collider2D collision) {
+
+        if (collision.gameObject == GameManager.clientGameObject) {
+            if (GameManager.clientController.useAction == UseConsole) {
+                GameManager.clientController.useAction = null;
+            }
         }
     }
 
+    public void UseConsole() {
+        if (!authorityEnabled) {
+
+            authorityEnabled = true;
+            GameManager.clientController.control = false;
+            GameManager.clientController.CmdGainControl(gameObject);
+            GameManager.clientController.CmdGainControl(ship);
+            //temp
+            GameManager.clientController.weaponScript.UseConsole();
+        }
+    }
+
+
     public void QuitConsole() {
+        
+        authorityEnabled = false;
 
         GameManager.clientController.CmdRemoveControl(gameObject);
         GameManager.clientController.CmdRemoveControl(ship);
         GameManager.clientController.control = true;
-        authorityEnabled = false;
+        //temp
+        GameManager.clientController.weaponScript.QuitConsole();
     }
 
     public override void OnStartAuthority() {
@@ -69,19 +90,25 @@ public class ShipPilotScript : NetworkBehaviour {
     
 
     public void Update() {
-        if (Input.GetKeyDown(KeyCode.G)) {
-            QuitConsole();
-        }
+
         if (!(hasAuthority && authorityEnabled)) { return; }
+
+
+        print("test");
+        input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 pos = ship.transform.position;
+        ship.transform.position = pos + (Vector2)ship.transform.up * input.y * speed * Time.deltaTime;
+
+
+
+        ship.transform.Rotate(0, 0, -input.x * rotationSpeed * Time.deltaTime);
+
+
 
         if (Input.GetKeyDown(KeyCode.F)) {
             QuitConsole();
+            input = Vector2.zero;
         }
-
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        Vector2 pos = ship.transform.position;
-
-        ship.transform.position = pos + new Vector2(input.x, input.y) * speed * Time.deltaTime;
 
     }
 

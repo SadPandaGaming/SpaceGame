@@ -4,10 +4,10 @@ using UnityEngine.Networking;
 
 public class NetworkMovement : NetworkBehaviour {
     #region Properties
-    [SerializeField]
-    protected Transform target;
+    Transform target;
     [SyncVar]
     public bool localpos = false;
+    public bool debug = false;
 
     #region Setup
     [Header("Setup")]
@@ -44,9 +44,16 @@ public class NetworkMovement : NetworkBehaviour {
     #endregion
 
     #region Logic
+
+    private void Start() {
+        target = gameObject.transform;
+        lastPositionSent = transform.position;
+    }
+
     void FixedUpdate() {
-        if (isLocalPlayer) {
+        if (isClient && hasAuthority) {
             sendInfo();
+            if (debug) { print(localpos); }
         }
         else {
             recontiliation();
@@ -60,6 +67,7 @@ public class NetworkMovement : NetworkBehaviour {
                 send = false;
                 Vector3 v = localpos ? target.localPosition : target.position;
                 Quaternion q = target.rotation;
+                
                 CmdSendPosition(v, q);
             }
             else {
@@ -119,6 +127,24 @@ public class NetworkMovement : NetworkBehaviour {
     [Command(channel = 1)]
     protected void CmdSendPosition(Vector3 newPos, Quaternion newRot) {
         RpcReceivePosition(newPos, newRot);
+
+        int frames = (SendRate + 1);
+        lastDirectionPerFrame = newPos - lastPositionSent;
+        //right now prediction is made with the new direction and amount of frames
+        lastDirectionPerFrame /= frames;
+        if (lastDirectionPerFrame.magnitude > thresholdMovementPrediction) {
+            lastDirectionPerFrame = Vector3.zero;
+        }
+        Vector3 lastEuler = lastRotationSent.eulerAngles;
+        Vector3 newEuler = newRot.eulerAngles;
+        if (Quaternion.Angle(lastRotationDirectionPerFrame, newRot) < thresholdRotationPrediction) {
+            lastRotationDirectionPerFrame = Quaternion.Euler((newEuler - lastEuler) / frames);
+        }
+        else {
+            lastRotationDirectionPerFrame = Quaternion.identity;
+        }
+        lastPositionSent = newPos;
+        lastRotationSent = newRot;
     }
 
     [ClientRpc(channel = 1)]
@@ -141,5 +167,7 @@ public class NetworkMovement : NetworkBehaviour {
         lastPositionSent = newPos;
         lastRotationSent = newRot;
     }
+
+
     #endregion
 }
